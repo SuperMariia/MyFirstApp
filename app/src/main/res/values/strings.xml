@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">MyFirstApp</string>
+    <string name="app_name">MyFirstApp123</string>
+    <string name="plus_button_name">+</string>
+    <string name="minus_button_name">-</string>
+    <string name="multiplication_button_name">*</string>
+    <string name="division_button_name">/</string>
+    <string name="equals_button_name">=</string>
+    <string name="one_button">1</string>
+    <string name="two_button">2</string>
+    <string name="three_button">3</string>
+    <string name="four_button">4</string>
+    <string name="five_button">5</string>
+    <string name="six_button">6</string>
+    <string name="seven_button">7</string>
+    <string name="eight_button">8</string>
+    <string name="nine_button">9</string>
+    <string name="zero_button">0</string>
+    <string name="dot_button">.</string>
+    <string name="clear_button">C</string>
+    <string name="plus_minus_button">-/+</string>
+    <string name="percent_button">%</string>
 </resources>
