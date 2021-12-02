@@ -18,5 +18,6 @@
     <string name="dot_button">.</string>
     <string name="clear_button">C</string>
     <string name="plus_minus_button">-/+</string>
-    <string name="percent_button">%</string>
+    <string name="backspace_button">back</string>
+    <string name="history_of_figures">History of calculating</string>
 </resources>

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="Input_Window" type="id">Input_Window</item>
+    <item name="mnuActivate" type="id" />
 </resources>

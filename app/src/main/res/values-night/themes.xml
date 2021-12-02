@@ -2,15 +2,58 @@
     <!-- Base application theme. -->
     <style name="Theme.MyFirstApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/green123_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">#AEDA7A</item>
+        <item name="colorPrimaryVariant">#CBDF08</item>
+        <item name="colorOnPrimary">#0E2310</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">#8898EF</item>
+        <item name="colorSecondaryVariant">#1B21F3</item>
+        <item name="colorOnSecondary">#05124C</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#ffffff</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="materialButtonStyle">@style/Theme.MyFirstApp.Button.All</item>
+
+
+    </style>
+
+
+    <style name="Theme.MyFirstApp.Button.All" parent="Widget.MaterialComponents.Button">
+
+        <item name="android:textStyle">bold</item>
+        <item name="android:backgroundTint">#AEDA7A</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#0E2310</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">7dp</item>
+
+    </style>
+
+    <style name="Theme.MyFirstApp.Button.Equal" parent="Theme.MyFirstApp.Button.All">
+
+        <item name="android:backgroundTint">#8898EF</item>
+
+
+    </style>
+
+    <style name="Theme.MyFirstApp.Button.History" parent="Theme.MyFirstApp.Button.All">
+
+        <item name="android:textSize">23sp</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:textStyle">normal</item>
+
+
+    </style>
+
+    <style name="Theme.MyFirstApp.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:background">#ACB6EA</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:textStyle">normal</item>
+
     </style>
 </resources>
