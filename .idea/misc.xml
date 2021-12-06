@@ -4,10 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21875" />
+        <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/drawable/calculator_icon.xml" value="0.2956140350877193" />
+        <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/drawable/history_of_calculatings_icon.xml" value="0.2956140350877193" />
+        <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/drawable/history_of_results.xml" value="0.2956140350877193" />
         <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21875" />
-        <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/layout/activity_main.xml" value="0.301699716713881" />
         <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/layout/activity_second_history.xml" value="0.30526315789473685" />
+        <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/layout/fragment_calculator.xml" value="0.28157894736842104" />
+        <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/layout/fragment_history.xml" value="0.26973684210526316" />
         <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/layout/history_list_item.xml" value="0.30526315789473685" />
+        <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/menu/bottom_menu.xml" value="0.2820175438596491" />
         <entry key="..\:/Users/masha/AndroidStudioProjects/MyFirstApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21875" />
       </map>
     </option>

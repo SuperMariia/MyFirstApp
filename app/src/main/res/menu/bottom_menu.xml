@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/calculator_menu"
+        android:icon="@drawable/calculator_icon"
+        android:title="@string/calculator"
+        />
+    <item
+        android:id="@+id/history_of_calculatings_menu"
+        android:icon="@drawable/history_icon"
+        android:title="@string/history_of_calculatings"
+        />
+</menu>
