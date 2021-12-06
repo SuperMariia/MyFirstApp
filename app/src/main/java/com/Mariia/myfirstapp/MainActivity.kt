@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+private const val LAST_SELECTED_ITEM = "item"
+private val CALCULATOR_FRAGMENT = CalculatorFragment().javaClass.name
+private val HISTORY_FRAGMENT = HistoryFragment().javaClass.name
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,25 +22,47 @@ class MainActivity : AppCompatActivity() {
             var fragment: Fragment? = null
             when (item.itemId) {
                 R.id.calculator_menu -> {
-                    fragment = CalculatorFragment()
+
+                    fragment = if (savedInstanceState != null) supportFragmentManager.getFragment(
+                        savedInstanceState,
+                        CALCULATOR_FRAGMENT
+                    ) else CalculatorFragment()
+
                 }
                 R.id.history_of_calculatings_menu -> {
-                    fragment = HistoryFragment()
+
+                    fragment = if (savedInstanceState != null) supportFragmentManager.getFragment(
+                        savedInstanceState,
+                        HISTORY_FRAGMENT
+                    ) else HistoryFragment()
                 }
             }
             replaceFragment(fragment!!)
             true
         }
-        bottomNavigationView.selectedItemId = R.id.calculator_menu
+        bottomNavigationView.selectedItemId =
+            savedInstanceState?.getInt(LAST_SELECTED_ITEM) ?: R.id.calculator_menu
 
 
-}
+    }
 
-fun replaceFragment(fragment: Fragment) {
-    supportFragmentManager
-        .beginTransaction()
-        .replace(R.id.fragment_container, fragment)
-        .commit()
-}
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(LAST_SELECTED_ITEM, bottomNavigationView.selectedItemId)
+
+        val currentFragment = supportFragmentManager.fragments.last()
+        supportFragmentManager.putFragment(
+            outState,
+            currentFragment.javaClass.name,
+            currentFragment
+        )
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
 }
 
