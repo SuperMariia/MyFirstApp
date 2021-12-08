@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import kotlin.collections.ArrayList
+const val KEY = "input text"
 
 class CalculatorFragment : Fragment() {
 
@@ -32,9 +33,6 @@ class CalculatorFragment : Fragment() {
     lateinit var backspaceButton: Button
     lateinit var plusMinusButton: Button
 
-
-
-
     lateinit var inputWindow: TextView
 
     var firstNumber: Double = 0.0
@@ -43,7 +41,6 @@ class CalculatorFragment : Fragment() {
     var result: String = ""
     var pressedOperation: Boolean = false
     var hadResult: Boolean = false
-
 
 
 
@@ -77,7 +74,7 @@ class CalculatorFragment : Fragment() {
         inputWindow.text = ""
 
 
-
+if(savedInstanceState!=null) inputWindow.text = savedInstanceState.getString(KEY)
 
             oneButton.setOnClickListener {
             if (hadResult==false)
@@ -226,8 +223,16 @@ class CalculatorFragment : Fragment() {
             pressedOperation = false
             hadResult=true
             MainActivity.resultsList.add(result)
+
+
         }
         return view
+
+
+    }
+    override fun onSaveInstanceState(outState: Bundle)  {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY,inputWindow.text.toString())
     }
 }
 

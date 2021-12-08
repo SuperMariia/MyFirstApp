@@ -11,12 +11,13 @@
         android:id="@+id/history_title_view"
         android:text="@string/calculatings"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/yellow_sand"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -25,18 +26,20 @@
         android:layout_height="match_parent"
         app:layout_constraintTop_toBottomOf="@id/history_title_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/website_link_button"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="5dp"
         android:textSize="20sp"
+
         />
 
     <Button
         android:id="@+id/website_link_button"
         android:text="@string/just_see_my_website"
         android:backgroundTint="@color/green_blend"
+        android:textSize="12sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/history_title_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

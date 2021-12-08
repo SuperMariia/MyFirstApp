@@ -22,13 +22,7 @@ class MainActivity : AppCompatActivity() {
             var fragment: Fragment? = null
             when (item.itemId) {
                 R.id.calculator_menu -> {
-
-
-
-                    fragment = if (savedInstanceState != null) supportFragmentManager.getFragment(
-                        savedInstanceState,
-                        CALCULATOR_FRAGMENT
-                    ) else CalculatorFragment()
+                    fragment = if (savedInstanceState != null) supportFragmentManager.getFragment(savedInstanceState,CALCULATOR_FRAGMENT) else CalculatorFragment()
 
                 }
                 R.id.history_of_calculatings_menu -> {
