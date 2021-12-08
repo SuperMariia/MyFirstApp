@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import kotlin.collections.ArrayList
 
 class CalculatorFragment : Fragment() {
 
@@ -30,14 +31,20 @@ class CalculatorFragment : Fragment() {
     lateinit var clearButton: Button
     lateinit var backspaceButton: Button
     lateinit var plusMinusButton: Button
-    private lateinit var error: Exception
+
+
+
 
     lateinit var inputWindow: TextView
 
     var firstNumber: Double = 0.0
     var secondNumber: Double = 0.0
-    var operation = ""
-    var result = ""
+    var operation: String? = null
+    var result: String = ""
+    var pressedOperation: Boolean = false
+    var hadResult: Boolean = false
+
+
 
 
     override fun onCreateView(
@@ -67,69 +74,132 @@ class CalculatorFragment : Fragment() {
         plusMinusButton = view.findViewById(R.id.plus_minus_button)
 
         inputWindow = view.findViewById(R.id.input_window)
+        inputWindow.text = ""
 
 
-        oneButton.setOnClickListener {
+
+
+            oneButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "1"
-
+            else {hadResult=false
+                inputWindow.text=""
+            inputWindow.text = inputWindow.text.toString() + "1"}
         }
         twoButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "2"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "2"}
         }
         threeButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "3"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "3"}
         }
         fourButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "4"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "4"}
         }
         fiveButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "5"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "5"}
         }
         sixButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "6"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "6"}
         }
         sevenButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "7"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "7"}
         }
         eightButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "8"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "8"}
         }
         nineButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "9"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "9"}
         }
         zeroButton.setOnClickListener {
+            if (hadResult==false)
             inputWindow.text = inputWindow.text.toString() + "0"
+            else {hadResult=false
+                inputWindow.text = ""
+            inputWindow.text = inputWindow.text.toString() + "0"}
+        }
+
+
+        plusMinusButton.setOnClickListener {
+            if (!inputWindow.text.contains("-"))
+                inputWindow.text = "-" + inputWindow.text.toString()
         }
 
         dotButton.setOnClickListener {
-            inputWindow.text = inputWindow.text.toString() + "."
+            if (!inputWindow.text.contains("."))
+                inputWindow.text = inputWindow.text.toString() + "."
+
         }
 
-
         plusButton.setOnClickListener {
-            firstNumber = inputWindow.text.toString().toDouble()
-            operation = "+"
-            inputWindow.text = ""
+            if (pressedOperation == false) {
+                firstNumber = inputWindow.text.toString().toDouble()
+                operation = "+"
+                inputWindow.text = ""
+                pressedOperation = true
+            }
 
         }
         minusButton.setOnClickListener {
-            firstNumber = inputWindow.text.toString().toDouble()
-            operation = "-"
-            inputWindow.text = ""
+            if (pressedOperation == false) {
+                firstNumber = inputWindow.text.toString().toDouble()
+                operation = "-"
+                inputWindow.text = ""
+                pressedOperation = true
+            }
         }
         multiplicateButton.setOnClickListener {
-            firstNumber = inputWindow.text.toString().toDouble()
-            operation = "*"
-            inputWindow.text = ""
+            if (pressedOperation == false) {
+                firstNumber = inputWindow.text.toString().toDouble()
+                operation = "*"
+                inputWindow.text = ""
+                pressedOperation = true
+            }
         }
         divideButton.setOnClickListener {
-            firstNumber = inputWindow.text.toString().toDouble()
-            operation = "/"
-            inputWindow.text = ""
+            if (pressedOperation == false) {
+                firstNumber = inputWindow.text.toString().toDouble()
+                operation = "/"
+                inputWindow.text = ""
+                pressedOperation = true
+            }
 
         }
         clearButton.setOnClickListener {
             inputWindow.text = ""
+            pressedOperation = false
+            hadResult=false
 
         }
         backspaceButton.setOnClickListener {
@@ -139,19 +209,23 @@ class CalculatorFragment : Fragment() {
         }
 
         equalButton.setOnClickListener {
+
             secondNumber = inputWindow.text.toString().toDouble()
             result = when (operation) {
                 "+" -> (firstNumber + secondNumber).toString()
                 "-" -> (firstNumber - secondNumber).toString()
                 "*" -> (firstNumber * secondNumber).toString()
-                "/" -> (((if (secondNumber !== 0.0) {result=
+                "/" -> (if (secondNumber != 0.0) {
                     (firstNumber / secondNumber).toString()
-                } else ("Error")) as String))
+                } else ("Error"))
 
 
                 else -> ("Error")
             }
             inputWindow.text = result
+            pressedOperation = false
+            hadResult=true
+            MainActivity.resultsList.add(result)
         }
         return view
     }

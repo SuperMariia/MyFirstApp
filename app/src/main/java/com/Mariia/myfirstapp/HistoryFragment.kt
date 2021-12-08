@@ -10,6 +10,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.collections.ArrayList
 
 class HistoryFragment : Fragment() {
 
@@ -23,13 +24,8 @@ class HistoryFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_history, container, false)
         historyRecyclerView = view.findViewById(R.id.history_calculatings_recyclerview)
-        val resultsList: List<results> = listOf(
-            results("534567.0"),
-            results("53565635.3536"),
-            results("67658778.98789"),
-            results("232121.0"),
-            results("625543748564661435589594634.0")
-        )
+        val resultsList = MainActivity.resultsList
+
         historyRecyclerView.layoutManager=LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL,

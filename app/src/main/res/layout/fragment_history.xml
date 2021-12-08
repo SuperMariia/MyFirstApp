@@ -33,6 +33,7 @@
     <Button
         android:id="@+id/website_link_button"
         android:text="@string/just_see_my_website"
+        android:backgroundTint="@color/green_blend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -8,10 +8,14 @@
     <!--suppress AndroidDomInspection -->
     <TextView
         android:id="@+id/input_window"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="enter"
+        android:layout_margin="5dp"
+
+        android:hint="@string/enter"
+        android:textSize="60sp"
+        android:background="@color/purple_blend"
+        android:gravity="start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,8 +23,12 @@
 
     <Button
         android:id="@+id/plus_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/plus_button_name"
         app:layout_constraintStart_toEndOf="@id/three_button"
         app:layout_constraintTop_toBottomOf="@id/equals_button"
@@ -29,24 +37,33 @@
 
     <Button
         android:id="@+id/minus_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/minus_button_name"
         app:layout_constraintStart_toEndOf="@id/six_button"
         app:layout_constraintTop_toBottomOf="@id/plus_button" />
 
     <Button
         android:id="@+id/multiplication_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/multiplication_button_name"
         app:layout_constraintStart_toEndOf="@id/nine_button"
         app:layout_constraintTop_toBottomOf="@id/minus_button" />
 
     <Button
         android:id="@+id/division_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/division_button_name"
         app:layout_constraintStart_toEndOf="@id/plus_minus_button"
         app:layout_constraintTop_toBottomOf="@id/multiplication_button" />
@@ -54,128 +71,171 @@
     <Button
 
         android:id="@+id/equals_button"
+        style="@style/Theme.Calculator.Button.All.Equal"
+        android:background="@color/blue_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
 
-        android:layout_width="140dp"
-        android:layout_height="70dp"
         android:text="@string/equals_button_name"
         app:layout_constraintStart_toEndOf="@id/backspace_button"
-        app:layout_constraintTop_toBottomOf="@id/input_window"
-        />
+        app:layout_constraintTop_toBottomOf="@id/input_window" />
 
     <Button
         android:id="@+id/one_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/one_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/clear_button" />
 
     <Button
         android:id="@+id/two_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/two_button"
         app:layout_constraintStart_toEndOf="@id/one_button"
         app:layout_constraintTop_toBottomOf="@id/backspace_button" />
 
     <Button
         android:id="@+id/three_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/three_button"
         app:layout_constraintStart_toEndOf="@id/two_button"
         app:layout_constraintTop_toBottomOf="@id/backspace_button" />
 
     <Button
         android:id="@+id/four_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/four_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/one_button" />
 
     <Button
         android:id="@+id/five_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/five_button"
         app:layout_constraintStart_toEndOf="@id/four_button"
         app:layout_constraintTop_toBottomOf="@id/two_button" />
 
     <Button
         android:id="@+id/six_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/six_button"
         app:layout_constraintStart_toEndOf="@id/five_button"
         app:layout_constraintTop_toBottomOf="@id/three_button" />
 
     <Button
         android:id="@+id/seven_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/seven_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/four_button" />
 
     <Button
         android:id="@+id/eight_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/eight_button"
         app:layout_constraintStart_toEndOf="@id/seven_button"
         app:layout_constraintTop_toBottomOf="@id/five_button" />
 
     <Button
         android:id="@+id/nine_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/nine_button"
         app:layout_constraintStart_toEndOf="@id/eight_button"
         app:layout_constraintTop_toBottomOf="@id/six_button" />
 
     <Button
         android:id="@+id/zero_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/zero_button"
         app:layout_constraintStart_toEndOf="@id/dot_button"
         app:layout_constraintTop_toBottomOf="@id/eight_button" />
 
     <Button
         android:id="@+id/dot_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/dot_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/seven_button" />
 
     <Button
         android:id="@+id/clear_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/clear_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/input_window" />
 
     <Button
         android:id="@+id/plus_minus_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:textSize="20dp"
+        android:textColor="@color/dark_brown"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/plus_minus_button"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/zero_button"
         app:layout_constraintTop_toBottomOf="@id/nine_button" />
 
     <Button
         android:id="@+id/backspace_button"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        style="@style/Theme.Calculator.Button.All"
+        android:background="@color/green_blend"
+        android:textColor="@color/dark_brown"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="@string/backspace_button"
-        android:textSize="12dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toEndOf="@id/clear_button"
         app:layout_constraintTop_toBottomOf="@id/input_window" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

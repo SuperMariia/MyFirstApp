@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.calculator_menu -> {
 
+
+
                     fragment = if (savedInstanceState != null) supportFragmentManager.getFragment(
                         savedInstanceState,
                         CALCULATOR_FRAGMENT
@@ -30,11 +32,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 R.id.history_of_calculatings_menu -> {
-
-                    fragment = if (savedInstanceState != null) supportFragmentManager.getFragment(
-                        savedInstanceState,
-                        HISTORY_FRAGMENT
-                    ) else HistoryFragment()
+                    fragment = if (savedInstanceState != null) supportFragmentManager.getFragment(savedInstanceState,HISTORY_FRAGMENT) else HistoryFragment()
                 }
             }
             replaceFragment(fragment!!)
@@ -63,6 +61,10 @@ class MainActivity : AppCompatActivity() {
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
+    }
+
+    companion object {
+        val resultsList=ArrayList<String>()
     }
 }
 
