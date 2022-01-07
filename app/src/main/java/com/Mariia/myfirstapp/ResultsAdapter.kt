@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class ResultsAdapter(private val resultsList: ArrayList<String>) : // List<results>
+class ResultsAdapter(private val resultsList: List<Calculating>) : // List<results>
     RecyclerView.Adapter<HistoryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
@@ -14,7 +14,7 @@ class ResultsAdapter(private val resultsList: ArrayList<String>) : // List<resul
     }
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-        val result = resultsList[position]
+        val result = resultsList.get(position)
         holder.bind(result)
     }
 

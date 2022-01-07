@@ -1,5 +1,6 @@
 package com.Mariia.myfirstapp
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.room.Room
+import com.Mariia.myfirstapp.MainActivity.Companion.instance
 import kotlin.collections.ArrayList
 const val KEY = "input text"
 
@@ -222,14 +225,32 @@ if(savedInstanceState!=null) inputWindow.text = savedInstanceState.getString(KEY
             inputWindow.text = result
             pressedOperation = false
             hadResult=true
-            MainActivity.resultsList.add(result)
+            // MainActivity.resultsList.add(result) нужно заменить на базу данных
+
+
+            val db = instance?.database
+            val calculatingDao = db?.calculatingDao()
+
+
+            val calculating = Calculating(
+            cid = 0,
+            numbers = "$firstNumber $operation $secondNumber",
+            result = result)
+
+            calculatingDao?.insert(calculating)
 
 
         }
         return view
 
-
     }
+
+
+    // private fun ApplicationContext(): Context { // added
+
+    // }
+
+
     override fun onSaveInstanceState(outState: Bundle)  {
         super.onSaveInstanceState(outState)
         outState.putString(KEY,inputWindow.text.toString())

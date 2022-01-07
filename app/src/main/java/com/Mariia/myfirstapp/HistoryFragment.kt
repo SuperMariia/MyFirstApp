@@ -10,7 +10,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.collections.ArrayList
+import com.Mariia.myfirstapp.MainActivity.Companion.instance
 
 class HistoryFragment : Fragment() {
 
@@ -23,8 +23,8 @@ class HistoryFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_history, container, false)
-        historyRecyclerView = view.findViewById(R.id.history_calculatings_recyclerview)
-        val resultsList = MainActivity.resultsList
+        historyRecyclerView = view.findViewById(R.id.history_calculating_recyclerview)
+        val resultsList = instance?.database?.calculatingDao()?.getAll() ?: emptyList()
 
         historyRecyclerView.layoutManager=LinearLayoutManager(
             context,

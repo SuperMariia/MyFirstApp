@@ -3,19 +3,33 @@ package com.Mariia.myfirstapp
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.room.Room
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.app.Application
+
+
+
 
 private const val LAST_SELECTED_ITEM = "item"
 private val CALCULATOR_FRAGMENT = CalculatorFragment().javaClass.name
 private val HISTORY_FRAGMENT = HistoryFragment().javaClass.name
 
 class MainActivity : AppCompatActivity() {
+    var database: AppDatabase? = null
+        private set
 
     lateinit var bottomNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        instance = this
+        database = Room.databaseBuilder(this, AppDatabase::class.java, "database").allowMainThreadQueries().build()
+
+
+
+
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -58,7 +72,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        val resultsList=ArrayList<String>()
+        var instance: MainActivity? = null
     }
+
 }
+
 

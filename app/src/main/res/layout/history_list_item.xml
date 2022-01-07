@@ -10,9 +10,9 @@
         android:id="@+id/result_of_calculating_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:textAlignment="viewStart"
-        android:textSize="20sp"
+        android:textSize="16sp"
         />
 
 </LinearLayout>
