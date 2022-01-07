@@ -14,7 +14,7 @@ interface CalculatingDao {
     @Query("SELECT * FROM calculating")
     fun getAll(): List<Calculating>
 
-    @Query("SELECT * FROM calculating WHERE cid IN (:calculatingIds)")
+    @Query("SELECT * FROM calculating WHERE id IN (:calculatingIds)")
     fun loadAllByIds(calculatingIds: IntArray): List<Calculating>
 
     @Query("SELECT * FROM calculating WHERE numbers LIKE :first AND " +

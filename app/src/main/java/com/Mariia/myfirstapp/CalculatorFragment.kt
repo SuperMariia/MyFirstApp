@@ -233,9 +233,9 @@ if(savedInstanceState!=null) inputWindow.text = savedInstanceState.getString(KEY
 
 
             val calculating = Calculating(
-            cid = 0,
-            numbers = "$firstNumber $operation $secondNumber",
-            result = result)
+            id = 0,
+            num = "$firstNumber $operation $secondNumber",
+            res = result)
 
             calculatingDao?.insert(calculating)
 
